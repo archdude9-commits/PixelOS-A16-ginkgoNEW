@@ -21,4 +21,4 @@ jobs:
 
       - name: Run Build on Crave
         run: |
-          crave run -- "repo init -u https://github.com/PixelOS-AOSP/android_manifest.git -b sixteen --git-lfs --depth 1 && crave run -- 'brunch ginkgo'"
+          crave run -- "repo init -u https://github.com/PixelOS-AOSP/android_manifest.git -b sixteen --git-lfs --depth 1 && brunch ginkgo"
