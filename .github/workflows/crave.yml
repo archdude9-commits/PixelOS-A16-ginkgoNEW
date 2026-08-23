@@ -13,6 +13,7 @@ jobs:
         run: |
           mkdir -p ~/.crave
           echo "${{ secrets.CRAVE_CONF }}" > ~/.crave/crave.conf
+          sed -i 's/{/{\n  "project": "PixelOS",/' ~/.crave/crave.conf
 
       - name: Install Crave CLI
         run: |
