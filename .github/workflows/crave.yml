@@ -13,7 +13,6 @@ jobs:
         run: |
           mkdir -p ~/.crave
           echo "${{ secrets.CRAVE_CONF }}" > ~/.crave/crave.conf
-          python3 -c "import json, os; p=os.path.expanduser('~/.crave/crave.conf'); d=json.load(open(p)); d['project']='PixelOS'; json.dump(d, open(p, 'w'))"
 
       - name: Install Crave CLI
         run: |
