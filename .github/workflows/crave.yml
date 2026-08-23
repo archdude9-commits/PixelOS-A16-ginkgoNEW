@@ -16,7 +16,8 @@ jobs:
 
       - name: Install Crave CLI
         run: |
-          curl -s https://raw.githubusercontent.com/accupara/crave/main/get_crave.sh | bash
+          curl -sL https://raw.githubusercontent.com/accupara/crave/master/get_crave.sh | bash || \
+          curl -sL https://raw.githubusercontent.com/accupara/crave/main/get_crave.sh | bash
           sudo mv crave /usr/local/bin/
 
       - name: Run Build on Crave
