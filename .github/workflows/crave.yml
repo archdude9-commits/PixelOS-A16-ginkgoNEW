@@ -1,0 +1,24 @@
+name: Build PixelOS A16 Ginkgo
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Crave Auth
+        run: |
+          mkdir -p ~/.crave
+          echo "${{ secrets.CRAVE_CONF }}" > ~/.crave/crave.conf
+
+      - name: Install Crave CLI
+        run: |
+          curl -s https://raw.githubusercontent.com/accupara/crave/main/get_crave.sh | bash
+          sudo mv crave /usr/local/bin/
+
+      - name: Run Build on Crave
+        run: |
+          crave run -- "repo init -u https://github.com/PixelOS-AOSP/android_manifest.git -b sixteen --git-lfs --depth 1 && crave run -- 'brunch ginkgo'"
