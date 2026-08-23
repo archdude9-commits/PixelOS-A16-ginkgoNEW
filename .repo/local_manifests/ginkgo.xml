@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <!-- Device, Vendor & Common Trees von 4admn -->
+    <project path="device/xiaomi/ginkgo" name="4admn/android_device_xiaomi_ginkgo" remote="github" revision="main" />
+    <project path="device/xiaomi/sm6125-common" name="4admn/android_device_xiaomi_sm6125-common" remote="github" revision="main" />
+    <project path="vendor/xiaomi/ginkgo" name="4admn/android_vendor_xiaomi_ginkgo" remote="github" revision="main" />
+    <project path="vendor/xiaomi/sm6125-common" name="4admn/android_vendor_xiaomi_sm6125-common" remote="github" revision="main" />
+
+    <!-- Kernel Tree -->
+    <project path="kernel/xiaomi/ginkgo" name="archdude9-commits/android_kernel_xiaomi_ginkgo" remote="github" revision="main" />
+
+    <!-- Xiaomi Hardware & XiaomiParts -->
+    <project path="hardware/xiaomi" name="4admn/android_hardware_xiaomi" remote="github" revision="main" />
+
+    <!-- Dolby Atmos Hardware Integration -->
+    <project path="hardware/dolby" name="4admn/android_hardware_dolby" remote="github" revision="main" />
+</manifest>
