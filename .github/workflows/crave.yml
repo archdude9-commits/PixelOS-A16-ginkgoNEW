@@ -13,7 +13,8 @@ jobs:
         run: |
           mkdir -p ~/.crave
           echo "${{ secrets.CRAVE_CONF }}" > ~/.crave/crave.conf
-          sed -i 's/{/{\n  "project": "PixelOS",/' ~/.crave/crave.conf
+          echo "${{ secrets.CRAVE_CONF }}" > ~/crave.conf
+          echo "${{ secrets.CRAVE_CONF }}" > ./crave.conf
 
       - name: Install Crave CLI
         run: |
@@ -22,4 +23,5 @@ jobs:
 
       - name: Run Build on Crave
         run: |
+          git remote set-url origin https://github.com/PixelOS-AOSP/android_manifest
           crave run -- "repo init -u https://github.com/PixelOS-AOSP/android_manifest.git -b sixteen --git-lfs --depth 1 && brunch ginkgo"
